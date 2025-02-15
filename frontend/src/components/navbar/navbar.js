@@ -11,7 +11,7 @@ export default function Navbar() {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <li>Features</li>
+          <a href="#stats-container">Features</a>
           <li>Contact</li>
         </ul>
       </div>

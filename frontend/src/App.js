@@ -9,6 +9,8 @@ import SignUp from "./pages/signup/signup";
 import AdminLogin from "./pages/admin/adminlogin";
 import AdminRegister from "./pages/admin/adminregister";
 import Dashboard from "./pages/dashboard/dashboard";
+import Features from "./components/features/features";
+import Reviews from "./components/reviews/reviews";
 
 export default function App() {
   const containerRef = useRef(null);
@@ -44,6 +46,26 @@ export default function App() {
                     bend={3}
                     textColor="#ffffff"
                     borderRadius={0.05}
+                  />
+                </div>
+                <VariableProximity
+                  label={"Why Choose Us?"}
+                  className={"variable-proximity-demo"}
+                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={100}
+                  falloff="linear"
+                />
+                <Features />
+                <div style={{ height: "600px", position: "relative" }}>
+                  <Reviews
+                    baseWidth={300}
+                    autoplay={true}
+                    autoplayDelay={3000}
+                    pauseOnHover={true}
+                    loop={true}
+                    round={false}
                   />
                 </div>
               </>
