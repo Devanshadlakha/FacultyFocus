@@ -12,6 +12,7 @@ export default function Navbar() {
             <li>Home</li>
           </Link>
           <a href="#stats-container">Features</a>
+          <a href="#revi-container">Reviews</a>
           <li>Contact</li>
         </ul>
       </div>
