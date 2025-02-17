@@ -11,6 +11,7 @@ import AdminRegister from "./pages/admin/adminregister";
 import Dashboard from "./pages/dashboard/dashboard";
 import Features from "./components/features/features";
 import Reviews from "./components/reviews/reviews";
+// import Footer from "./components/footer/footer";
 
 export default function App() {
   const containerRef = useRef(null);
@@ -68,6 +69,7 @@ export default function App() {
                     round={false}
                   />
                 </div>
+                {/* <Footer/> */}
               </>
             }
           />
