@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import CircularGallery from "./components/gallery/gallery";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import VariableProximity from "./components/heading/heading";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignIn from "./pages/signin/signin";
@@ -11,15 +11,17 @@ import AdminRegister from "./pages/admin/adminregister";
 import Dashboard from "./pages/dashboard/dashboard";
 import Features from "./components/features/features";
 import Reviews from "./components/reviews/reviews";
-// import Footer from "./components/footer/footer";
+import Footer from "./components/footer/footer";
+import Portal from "./pages/portal/portal";
 
 export default function App() {
   const containerRef = useRef(null);
+  const [FullNav, showFullNav] = useState(true);
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar FullNav={FullNav} showFullNav={showFullNav} />
         <Routes>
           <Route
             path="/"
@@ -69,7 +71,7 @@ export default function App() {
                     round={false}
                   />
                 </div>
-                {/* <Footer/> */}
+                <Footer />
               </>
             }
           />
@@ -78,6 +80,7 @@ export default function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin-register" element={<AdminRegister />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/admin-portal" element={<Portal />} />
         </Routes>
       </Router>
     </div>

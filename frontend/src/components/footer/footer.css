@@ -1,0 +1,139 @@
+.component-section {
+    background-color: #f9fafb;
+}
+
+.component-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 7xl;
+}
+
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.component-logo-section {
+    grid-column: span 2;
+}
+
+.component-logo {
+    margin-top: 1rem;
+    width: auto;
+    height: 2.25rem;
+}
+
+.component-description {
+    margin-top: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #4b5563;
+}
+
+.component-social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.25rem;
+}
+
+.component-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #1f2937;
+    color: white;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.component-icon:hover,
+.component-icon:focus {
+    background-color: #2563eb;
+}
+
+.component-svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: #9ca3af;
+}
+
+.links-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.link {
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.link:hover,
+.link:focus {
+    color: #2563eb;
+}
+
+.newsletter-form {
+    margin-top: 1.5rem;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    color: black;
+    transition: all 0.2s;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    caret-color: #2563eb;
+}
+
+.subscribe-button {
+    margin-top: 1rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.subscribe-button:hover,
+.subscribe-button:focus {
+    background-color: #1e40af;
+}
+
+.separator {
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    border-color: #e5e7eb;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+}

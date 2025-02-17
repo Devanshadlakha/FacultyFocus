@@ -5,6 +5,7 @@ import "./entry.css";
 export default function Entry() {
   const [selectedFramework, setSelectedFramework] = useState("Select");
   const [isOpen, setIsOpen] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false); // State to control the visibility of the toast
 
   const frameworks = [
     "Research",
@@ -13,6 +14,16 @@ export default function Entry() {
     "Achievement",
     "Other",
   ];
+
+  const handleSubmit = () => {
+    // Display the toast when Submit is clicked
+    setToastVisible(true);
+
+    // Hide the toast after 3 seconds
+    setTimeout(() => {
+      setToastVisible(false);
+    }, 5000);
+  };
 
   return (
     <div className="entry-div">
@@ -70,12 +81,12 @@ export default function Entry() {
                 </AnimatePresence>
               </div>
             </div>
-            {/* Name Input */}
+            {/* Heading Input */}
             <div className="input-group">
               <label htmlFor="name">Heading</label>
               <input id="name" type="text" placeholder="Heading" />
             </div>
-            {/* Name Input */}
+            {/* Description Input */}
             <div className="input-group">
               <label htmlFor="name">Description</label>
               <input id="name" type="text" placeholder="Describe your work" />
@@ -95,11 +106,25 @@ export default function Entry() {
             className="deploy"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={handleSubmit} // Handle the submit action
           >
-            Deploy
+            Submit
           </motion.button>
         </div>
       </motion.div>
+
+      {/* Toast Notification */}
+      {toastVisible && (
+        <motion.div
+          className="toast"
+          initial={{ opacity: 0, bottom: "20px", right: "20px" }}
+          animate={{ opacity: 1, bottom: "30px", right: "30px" }}
+          exit={{ opacity: 0, bottom: "20px", right: "20px" }}
+          transition={{ duration: 0.3 }}
+        >
+          New Entry Created!
+        </motion.div>
+      )}
     </div>
   );
 }

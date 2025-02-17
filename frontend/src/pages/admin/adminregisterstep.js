@@ -1,5 +1,6 @@
 import React, { useState, Children, useRef, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function AdminRegisterStep({
   children,
@@ -118,13 +119,26 @@ export default function AdminRegisterStep({
                   {backButtonText}
                 </button>
               )}
-              <button
-                onClick={isLastStep ? handleComplete : handleNext}
-                className="next-button"
-                {...nextButtonProps}
-              >
-                {isLastStep ? "Complete" : nextButtonText}
-              </button>
+              {isLastStep ? (
+                <Link to="/admin-portal">
+                  {" "}
+                  <button
+                    onClick={isLastStep ? handleComplete : handleNext}
+                    className="next-button"
+                    {...nextButtonProps}
+                  >
+                    {isLastStep ? "Complete" : nextButtonText}
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  onClick={isLastStep ? handleComplete : handleNext}
+                  className="next-button"
+                  {...nextButtonProps}
+                >
+                  {isLastStep ? "Complete" : nextButtonText}
+                </button>
+              )}
             </div>
           </div>
         )}
