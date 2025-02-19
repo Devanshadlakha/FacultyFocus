@@ -1,8 +1,11 @@
 import Stepper, { Step } from "./stepper";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./signin.css";
 
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <Stepper
       initialStep={1}
@@ -12,6 +15,8 @@ export default function SignIn() {
       onFinalStepCompleted={() => console.log("All steps completed!")}
       backButtonText="Previous"
       nextButtonText="Next"
+      email={email}
+      password={password}
     >
       <Step>
         <h2>Welcome back to TogetherFaculty!</h2>
@@ -26,14 +31,17 @@ export default function SignIn() {
       <Step>
         <h3>E-mail:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={email}
+          onChange={(e) => {
+            console.log(email);
+            setEmail(e.target.value);
+          }}
           placeholder="Your E-mail"
         />
         <h3>Password:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Your Password"
         />
       </Step>

@@ -17,6 +17,9 @@ export default function Stepi({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  name,
+  email,
+  password,
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
@@ -52,6 +55,17 @@ export default function Stepi({
   const handleComplete = () => {
     setDirection(1);
     updateStep(totalSteps + 1);
+  };
+
+  const handleSendData = async () => {
+    await fetch("http://localhost:8000/user-signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: name, email: email, password: password }),
+    });
+    console.log(name, email, password);
   };
 
   return (
@@ -132,7 +146,10 @@ export default function Stepi({
                 </Link>
               ) : (
                 <button
-                  onClick={isLastStep ? handleComplete : handleNext}
+                  onClick={() => {
+                    isLastStep ? handleComplete() : handleNext();
+                    if (currentStep === 2) handleSendData();
+                  }}
                   className="next-button"
                   {...nextButtonProps}
                 >

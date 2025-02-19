@@ -15,6 +15,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Link } from "react-router-dom";
 
 import "./options.css";
 
@@ -112,6 +113,8 @@ export default function Options({
   dockHeight = 256,
   baseItemSize = 50,
   setcurrState,
+  FullNav,
+  showFullNav,
 }) {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
@@ -146,23 +149,44 @@ export default function Options({
         role="toolbar"
         aria-label="Application dock"
       >
-        {items.map((item, index) => (
-          <DockItem
-            key={index}
-            onClick={() => {
-              handlecurrState(item.label);
-            }}
-            className={item.className}
-            mouseX={mouseX}
-            spring={spring}
-            distance={distance}
-            magnification={magnification}
-            baseItemSize={baseItemSize}
-          >
-            <DockIcon>{item.icon}</DockIcon>
-            <DockLabel>{item.label}</DockLabel>
-          </DockItem>
-        ))}
+        {items.map((item, index) =>
+          item.label === "SignOut" ? (
+            <Link to="/">
+              <DockItem
+                key={index}
+                onClick={() => {
+                  showFullNav(true);
+                  handlecurrState(item.label);
+                }}
+                className={item.className}
+                mouseX={mouseX}
+                spring={spring}
+                distance={distance}
+                magnification={magnification}
+                baseItemSize={baseItemSize}
+              >
+                <DockIcon>{item.icon}</DockIcon>
+                <DockLabel>{item.label}</DockLabel>
+              </DockItem>
+            </Link>
+          ) : (
+            <DockItem
+              key={index}
+              onClick={() => {
+                handlecurrState(item.label);
+              }}
+              className={item.className}
+              mouseX={mouseX}
+              spring={spring}
+              distance={distance}
+              magnification={magnification}
+              baseItemSize={baseItemSize}
+            >
+              <DockIcon>{item.icon}</DockIcon>
+              <DockLabel>{item.label}</DockLabel>
+            </DockItem>
+          )
+        )}
       </motion.div>
     </motion.div>
   );

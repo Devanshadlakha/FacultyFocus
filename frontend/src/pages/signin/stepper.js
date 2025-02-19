@@ -19,6 +19,8 @@ export default function Stepper({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  email,
+  password,
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
@@ -54,6 +56,19 @@ export default function Stepper({
   const handleComplete = () => {
     setDirection(1);
     updateStep(totalSteps + 1);
+  };
+
+  const handleSendData = async () => {
+    console.log(email, password);
+    const data = await fetch("http://localhost:8000/user-login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password }),
+    });
+    const res = await data.json();
+    console.log(res);
   };
 
   return (
@@ -134,7 +149,10 @@ export default function Stepper({
                 </Link>
               ) : (
                 <button
-                  onClick={isLastStep ? handleComplete : handleNext}
+                  onClick={() => {
+                    isLastStep ? handleComplete() : handleNext();
+                    if (currentStep === 2) handleSendData();
+                  }}
                   className="next-button"
                   {...nextButtonProps}
                 >

@@ -8,7 +8,7 @@ import Entry from "../../components/entry/entry";
 import Attendance from "../../components/chart/attendancechart";
 import "./portal.css";
 
-export default function Portal() {
+export default function Portal({ FullNav, showFullNav }) {
   const [currState, setcurrState] = useState("Profile");
   return (
     <div className="portal">
@@ -23,7 +23,11 @@ export default function Portal() {
       ) : (
         <></>
       )}
-      <OptionsUsage setcurrState={setcurrState} />
+      <OptionsUsage
+        setcurrState={setcurrState}
+        FullNav={FullNav}
+        showFullNav={showFullNav}
+      />
     </div>
   );
 }

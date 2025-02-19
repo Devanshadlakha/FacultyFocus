@@ -5,6 +5,7 @@ import {
   VscGraph,
   VscNewFile,
   VscCloudDownload,
+  VscSignOut,
 } from "react-icons/vsc";
 
 const items = [
@@ -33,9 +34,14 @@ const items = [
     label: "Settings",
     onClick: () => alert("Settings!"),
   },
+  {
+    icon: <VscSignOut size={18} />,
+    label: "SignOut",
+    onClick: () => alert("SignOut!"),
+  },
 ];
 
-export default function MenuUsage({ setcurrState }) {
+export default function MenuUsage({ setcurrState, FullNav, showFullNav }) {
   return (
     <Menu
       items={items}
@@ -43,6 +49,8 @@ export default function MenuUsage({ setcurrState }) {
       baseItemSize={50}
       magnification={70}
       setcurrState={setcurrState}
+      FullNav={FullNav}
+      showFullNav={showFullNav}
     />
   );
 }

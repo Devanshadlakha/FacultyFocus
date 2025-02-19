@@ -8,7 +8,7 @@ import Entry from "../../components/entry/entry";
 import Attendance from "../../components/chart/attendancechart";
 import "./dashboard.css";
 
-export default function Dashboard() {
+export default function Dashboard({ FullNav, showFullNav }) {
   const [currState, setcurrState] = useState("Profile");
   return (
     <div className="dashboard">
@@ -27,7 +27,11 @@ export default function Dashboard() {
       ) : (
         <></>
       )}
-      <MenuUsage setcurrState={setcurrState} />
+      <MenuUsage
+        setcurrState={setcurrState}
+        FullNav={FullNav}
+        showFullNav={showFullNav}
+      />
     </div>
   );
 }

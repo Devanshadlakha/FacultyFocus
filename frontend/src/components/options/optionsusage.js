@@ -3,8 +3,7 @@ import {
   VscAccount,
   VscSettingsGear,
   VscGraph,
-  VscNewFile,
-  VscCloudDownload,
+  VscSignOut,
 } from "react-icons/vsc";
 
 const items = [
@@ -23,9 +22,14 @@ const items = [
     label: "Settings",
     onClick: () => alert("Settings!"),
   },
+  {
+    icon: <VscSignOut size={18} />,
+    label: "SignOut",
+    onClick: () => alert("SignOut!"),
+  },
 ];
 
-export default function OptionsUsage({ setcurrState }) {
+export default function OptionsUsage({ setcurrState, FullNav, showFullNav }) {
   return (
     <Options
       items={items}
@@ -33,6 +37,8 @@ export default function OptionsUsage({ setcurrState }) {
       baseItemSize={50}
       magnification={70}
       setcurrState={setcurrState}
+      FullNav={FullNav}
+      showFullNav={showFullNav}
     />
   );
 }

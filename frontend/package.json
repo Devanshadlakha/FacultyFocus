@@ -7,6 +7,7 @@
     "autoprefixer": "^10.4.20",
     "chart.js": "^4.4.7",
     "class-variance-authority": "^0.7.1",
+    "concurrently": "^9.1.2",
     "cra-template": "1.2.0",
     "framer-motion": "^12.4.3",
     "jspdf": "^2.5.2",
@@ -22,10 +23,12 @@
     "tailwind-variants": "^0.3.1"
   },
   "scripts": {
+    "start-backend": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run start-backend\" \"npm run start\""
   },
   "eslintConfig": {
     "extends": [

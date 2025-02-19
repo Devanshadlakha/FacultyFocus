@@ -79,8 +79,14 @@ export default function App() {
           <Route path="/register" element={<SignUp />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin-register" element={<AdminRegister />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/admin-portal" element={<Portal />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard FullNav={FullNav} showFullNav={showFullNav} />}
+          />
+          <Route
+            path="/admin-portal"
+            element={<Portal FullNav={FullNav} showFullNav={showFullNav} />}
+          />
         </Routes>
       </Router>
     </div>
