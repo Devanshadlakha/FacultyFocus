@@ -1,7 +1,10 @@
 import AdminLoginStep, { Step } from "./adminloginstep";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function AdminLogin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <AdminLoginStep
       initialStep={1}
@@ -11,6 +14,8 @@ export default function AdminLogin() {
       onFinalStepCompleted={() => console.log("All steps completed!")}
       backButtonText="Previous"
       nextButtonText="Next"
+      email={email}
+      password={password}
     >
       <Step>
         <h4>ADMIN</h4>
@@ -26,14 +31,14 @@ export default function AdminLogin() {
       <Step>
         <h3>E-mail:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Your E-mail"
         />
         <h3>Password:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Your Password"
         />
       </Step>

@@ -33,7 +33,6 @@ export default function SignIn() {
         <input
           value={email}
           onChange={(e) => {
-            console.log(email);
             setEmail(e.target.value);
           }}
           placeholder="Your E-mail"

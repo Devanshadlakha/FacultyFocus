@@ -1,7 +1,12 @@
 import AdminRegisterStep, { Step } from "./adminregisterstep";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function AdminRegister() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <AdminRegisterStep
       initialStep={1}
@@ -11,6 +16,9 @@ export default function AdminRegister() {
       onFinalStepCompleted={() => console.log("All steps completed!")}
       backButtonText="Previous"
       nextButtonText="Next"
+      name={name}
+      email={email}
+      password={password}
     >
       <Step>
         <h4>ADMIN</h4>
@@ -26,20 +34,22 @@ export default function AdminRegister() {
       <Step>
         <h3>Name:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           placeholder="Your Name"
         />
         <h3>E-mail:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Your E-mail"
+          type="email"
         />
         <h3>Password:</h3>
         <input
-          // value={name}
-          // onChange={(e) => setName(e.target.value)}
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Your Password"
         />
       </Step>

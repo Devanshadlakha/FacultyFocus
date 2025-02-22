@@ -17,10 +17,13 @@ export default function AdminLoginStep({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  email,
+  password,
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const [direction, setDirection] = useState(0);
+  const [credentials, setCredentials] = useState(true);
   const stepsArray = Children.toArray(children);
   const totalSteps = stepsArray.length;
   const isCompleted = currentStep > totalSteps;
@@ -42,7 +45,22 @@ export default function AdminLoginStep({
     }
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    if (currentStep === 2) {
+      const data = await fetch("http://localhost:8000/admin-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email, password: password }),
+      });
+      const res = await data.json();
+
+      if (!res.success) {
+        alert("Login failed! Please check your credentials.");
+        return;
+      }
+    }
     if (!isLastStep) {
       setDirection(1);
       updateStep(currentStep + 1);
@@ -52,6 +70,25 @@ export default function AdminLoginStep({
   const handleComplete = () => {
     setDirection(1);
     updateStep(totalSteps + 1);
+  };
+
+  const handleSendData = async () => {
+    try {
+      const data = await fetch("http://localhost:8000/admin-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const res = await data.json();
+      setCredentials(res.success);
+      return res.success;
+    } catch (error) {
+      console.error("Error during authentication:", error);
+      setCredentials(false);
+      return false;
+    }
   };
 
   return (
@@ -132,9 +169,10 @@ export default function AdminLoginStep({
                 </Link>
               ) : (
                 <button
-                  onClick={isLastStep ? handleComplete : handleNext}
+                  onClick={handleNext}
                   className="next-button"
                   {...nextButtonProps}
+                  disabled={currentStep === 2 && !credentials}
                 >
                   {isLastStep ? "Complete" : nextButtonText}
                 </button>

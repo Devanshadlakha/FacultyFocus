@@ -17,10 +17,14 @@ export default function AdminRegisterStep({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  name,
+  email,
+  password,
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const [direction, setDirection] = useState(0);
+  const [credentials, setCredentials] = useState(true);
   const stepsArray = Children.toArray(children);
   const totalSteps = stepsArray.length;
   const isCompleted = currentStep > totalSteps;
@@ -53,7 +57,16 @@ export default function AdminRegisterStep({
     setDirection(1);
     updateStep(totalSteps + 1);
   };
-
+  const handleSendData = async () => {
+    await fetch("http://localhost:8000/admin-signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: name, email: email, password: password }),
+    });
+    console.log(name, email, password);
+  };
   return (
     <div className="outer-container" {...rest}>
       <div
@@ -132,7 +145,10 @@ export default function AdminRegisterStep({
                 </Link>
               ) : (
                 <button
-                  onClick={isLastStep ? handleComplete : handleNext}
+                  onClick={() => {
+                    isLastStep ? handleComplete() : handleNext();
+                    if (currentStep === 2) handleSendData();
+                  }}
                   className="next-button"
                   {...nextButtonProps}
                 >
