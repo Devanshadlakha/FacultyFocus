@@ -5,32 +5,29 @@ export default function Settings() {
     <div className="settings">
       <form className="settings-form">
         <div className="settings-form-left">
-          <p className="title">Edit Profile</p>
-          <div className="info-inputs">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-          </div>
+          <p className="title">Profile Details</p>
           <div className="info-inputs">
             <input type="tel" placeholder="Phone Number" />
+            <input type="text" placeholder="DD/MM/YY" />
           </div>
           <div className="info-inputs">
-            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Designation" />
           </div>
           <div className="info-inputs">
-            <input type="text" placeholder="Address" />
+            <input type="text" placeholder="Educational Qualification" />
           </div>
           <div className="info-inputs">
-            <input type="text" placeholder="Age" />
+            <input type="text" placeholder="Gender" />
+            <input type="text" placeholder="Category" />
+          </div>
+          <div className="info-inputs">
             <input type="text" placeholder="Year of Joining" />
-          </div>
-          <div className="info-inputs">
-            <input type="text" placeholder="Institute ID" />
             <input type="text" placeholder="Department ID" />
           </div>
         </div>
         <div className="settings-form-right">
           <img
-            src="https://t3.ftcdn.net/jpg/03/15/66/92/360_F_315669239_tvFWEffY96UtU2xT5uccdSlIJ2s0E9Ux.jpg"
+            src="https://img.freepik.com/free-photo/business-finance-employment-female-successful-entrepreneurs-concept-friendly-smiling-office-manager-greeting-new-coworker-businesswoman-welcome-clients-with-hand-wave-hold-laptop_1258-59122.jpg"
             alt=""
             width="300px"
             className="profile-photo"
