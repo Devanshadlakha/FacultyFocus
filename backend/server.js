@@ -9,6 +9,7 @@ import adminLoginRouter from "./routes/adminLoginRoute.js";
 const app = express();
 const PORT = 8000;
 
+
 dotenv.config(); // Load .env file
 app.use(cors());
 app.use(express.json());

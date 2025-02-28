@@ -14,7 +14,7 @@ export default function Navbar({ FullNav, showFullNav }) {
             </Link>
             <a href="#stats-container">Features</a>
             <a href="#revi-container">Reviews</a>
-            <li>Contact</li>
+            <a href="#footer-section">Contact</a>
           </ul>
         ) : (
           <></>
