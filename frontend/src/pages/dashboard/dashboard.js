@@ -11,16 +11,17 @@ import "./dashboard.css";
 export default function Dashboard({ FullNav, showFullNav }) {
   const [currState, setcurrState] = useState("Profile");
   const urlParams = new URLSearchParams(window.location.search);
-  const name = urlParams.get("name");
+  // const name = urlParams.get("name");
   const email = urlParams.get("email");
+  console.log(email);
   return (
     <div className="dashboard">
       {currState === "Profile" ? (
-        <Profile name={name} email={email} />
+        <Profile email={email} />
       ) : currState === "Settings" ? (
-        <Settings />
+        <Settings email={email} setcurrState={setcurrState} />
       ) : currState === "Download" ? (
-        <PdfDownload name={name} />
+        <PdfDownload />
       ) : currState === "Add New Entry" ? (
         <Entry />
       ) : currState === "Performance" ? (

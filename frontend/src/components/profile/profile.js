@@ -4,8 +4,8 @@ import "./profile.css";
 export default function Profile({ name, email }) {
   const [Name, setName] = useState(name);
   const [Email, setEmail] = useState(email);
-  const [Phone, setPhone] = useState(null);
-  const [YOJ, setYOJ] = useState(null);
+  const [Phone, setPhone] = useState("");
+  const [yearofjoin, setYearofjoin] = useState("");
   const [designation, setDesignation] = useState("");
   const [deptID, setDeptID] = useState("");
 
@@ -29,7 +29,7 @@ export default function Profile({ name, email }) {
           </div>
           <div className="info-inputs">
             <p>Year of Joining:</p>
-            <p>{YOJ}</p>
+            <p>{yearofjoin}</p>
           </div>
           <div className="info-inputs">
             <p>Designation:</p>

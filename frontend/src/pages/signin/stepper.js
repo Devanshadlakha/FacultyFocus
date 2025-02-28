@@ -159,7 +159,7 @@ export default function Stepper({
                 </button>
               )}
               {isLastStep ? (
-                <Link to="/dashboard">
+                <Link to={`/dashboard?email=${email}`}>
                   {" "}
                   <button
                     onClick={isLastStep ? handleComplete : handleNext}

@@ -9,17 +9,29 @@ const userDataSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  yoj: {
-    type: Number,
+  yearofjoin: {
+    type: String,
   },
   phoneno: {
-    type: Number,
+    type: String,
+  },
+  gender: {
+    type: String,
+  },
+  education: {
+    type: String,
   },
   designation: {
     type: String,
   },
-  deptid: {
-    type: Number,
+  category: {
+    type: String,
+  },
+  deptID: {
+    type: String,
+  },
+  dob: {
+    type: String,
   },
 });
 
