@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon server.js\" \"cd /Users/akshatgupta/Desktop/Programming/FacultyFocus/frontend && npm run start\""
+    "dev": "concurrently \"nodemon server.js\" \"cd C:/Users/HP/FacultyFocus/frontend && npm run start\""
   },
   "type": "module",
   "author": "",

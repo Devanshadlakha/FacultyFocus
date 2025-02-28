@@ -3,7 +3,7 @@ import "./footer.css"; // Importing the regular CSS file
 
 export default function Footer() {
   return (
-    <section className="component-section">
+    <section className="component-section" id="footer-section">
       <div className="component-container">
         <div className="component-grid">
           <div className="component-logo-section">
