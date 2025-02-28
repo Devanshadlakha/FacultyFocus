@@ -362,24 +362,19 @@ class App {
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
       {
-        // image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        image: `https://media.istockphoto.com/id/1599477426/photo/happy-professor-giving-exam-papers-to-group-of-students-in-lecture-hall.jpg?s=612x612&w=0&k=20&c=28SQdZ3tXwD04b_k6gb9g2LedDtbGhhjDJD67L9V4Vc=`,
+        image: `https://c1.wallpaperflare.com/preview/481/357/96/einstein-albert-classroom-blackboard.jpg`,
       },
       {
-        // image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        image: `https://media.istockphoto.com/id/1599477426/photo/happy-professor-giving-exam-papers-to-group-of-students-in-lecture-hall.jpg?s=612x612&w=0&k=20&c=28SQdZ3tXwD04b_k6gb9g2LedDtbGhhjDJD67L9V4Vc=`,
+        image: `https://media.licdn.com/dms/image/v2/C5112AQFTUd8xGYwvHA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520086471946?e=2147483647&v=beta&t=S4-Ey33WDWi0xfO10yUOkS8_YnHQxgzW1ZCmVA40754`,
       },
       {
-        // image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        image: `https://media.istockphoto.com/id/1599477426/photo/happy-professor-giving-exam-papers-to-group-of-students-in-lecture-hall.jpg?s=612x612&w=0&k=20&c=28SQdZ3tXwD04b_k6gb9g2LedDtbGhhjDJD67L9V4Vc=`,
+        image: `https://static.vecteezy.com/system/resources/thumbnails/054/361/796/small/smiling-professional-woman-in-business-attire-free-photo.jpg`,
       },
       {
-        // image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        image: `https://media.istockphoto.com/id/1599477426/photo/happy-professor-giving-exam-papers-to-group-of-students-in-lecture-hall.jpg?s=612x612&w=0&k=20&c=28SQdZ3tXwD04b_k6gb9g2LedDtbGhhjDJD67L9V4Vc=`,
+        image: `https://c1.wallpaperflare.com/preview/581/212/999/books-man-person-businessman.jpg`,
       },
       {
-        // image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        image: `https://media.istockphoto.com/id/1599477426/photo/happy-professor-giving-exam-papers-to-group-of-students-in-lecture-hall.jpg?s=612x612&w=0&k=20&c=28SQdZ3tXwD04b_k6gb9g2LedDtbGhhjDJD67L9V4Vc=`,
+        image: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn9rQNKX9iRxhH6lGwTKO8m7ZfB0EkcK1lrQ&s`,
       },
     ];
     const galleryItems = items && items.length ? items : defaultItems;

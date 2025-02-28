@@ -80,7 +80,7 @@ export default function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin-register" element={<AdminRegister />} />
           <Route
-            path="/dashboard"
+            path="/dashboard/*"
             element={<Dashboard FullNav={FullNav} showFullNav={showFullNav} />}
           />
           <Route

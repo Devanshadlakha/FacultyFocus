@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from "react";
 import { jsPDF } from "jspdf";
 import "./pdf.css";
 
-export default function PdfDownload() {
+export default function PdfDownload({ name }) {
   const iframeRef = useRef(null);
 
   // Sample faculty data
   const facultyData = {
-    name: "John Doe",
+    name: name,
     experience: "10 years",
     department: "Computer Science",
     research: "Artificial Intelligence, Machine Learning",

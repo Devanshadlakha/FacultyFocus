@@ -1,4 +1,5 @@
 import React from "react";
+import { assets } from "../../assets/assets";
 import "./footer.css"; // Importing the regular CSS file
 
 export default function Footer() {
@@ -7,14 +8,15 @@ export default function Footer() {
       <div className="component-container">
         <div className="component-grid">
           <div className="component-logo-section">
-            <img
+            {/* <img
               className="component-logo"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg"
               alt=""
-            />
-            <p className="component-description">
+            /> */}
+            <img src={assets.fflogo} alt="" />
+            {/* <p className="component-description">
               Bringing data-driven insights to enhance faculty performance.
-            </p>
+            </p> */}
 
             <ul className="component-social-icons">
               <li>

@@ -144,6 +144,7 @@ const VariableProximity = forwardRef((props, ref) => {
     <span
       ref={ref}
       className={`${className} variable-proximity`}
+      id="itisheading"
       onClick={onClick}
       style={{ display: "inline", ...style }}
       {...restProps}

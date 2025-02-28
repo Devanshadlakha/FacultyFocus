@@ -4,9 +4,6 @@ import { fetchUserData } from "../controllers/userdataController.js";
 const userRegisterRouter = express.Router();
 
 // userRegisterRouter.post("/user-signup", registerData);
-userRegisterRouter.post("/user-signup", () => {
-    registerData(),
-    fetchUserData()
-});
+userRegisterRouter.post("/user-signup", registerData);
 
 export default userRegisterRouter;

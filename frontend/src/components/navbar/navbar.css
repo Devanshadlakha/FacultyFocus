@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    color: red;
     border-bottom: 2px solid black;
 }
 a{
@@ -12,7 +11,7 @@ a{
     text-decoration: none;
 }
 .navbar .logo{
-    width: 100px;
+    width: 200px;
 }
 
 .navbar-div-list{
@@ -29,6 +28,11 @@ a{
     gap: 25px;
     align-items: center;
     font-size: 23px;
+    font-style: bold;
+}
+
+.navbar-list a:hover{
+    border-bottom: 2px solid black;
 }
 
 .navbar-div-list li{

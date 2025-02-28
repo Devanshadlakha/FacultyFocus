@@ -1,4 +1,5 @@
 import userModel from "../models/userRegisterModel.js";
+import { fetchUserData } from "./userdataController.js";
 
 export const registerData = async (req, res) => {
   console.log(req.body);
@@ -9,6 +10,7 @@ export const registerData = async (req, res) => {
   });
   try {
     await User.save();
+    fetchUserData(req, res);
     res.status(200).json({
       success: true,
     });
